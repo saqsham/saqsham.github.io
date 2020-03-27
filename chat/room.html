@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Saksham | About</title>
+  <title>Saksham | ChatRoom</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -20,15 +20,15 @@
   <link href="../css/clean-blog.css" rel="stylesheet">
 
   <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+
   <style>
-    body {
+    .body1 {
       box-sizing: border-box;
       margin: 0;
       padding: 13px;
       display: flex;
       flex-direction: column;
       max-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
     .members-count,
@@ -37,6 +37,7 @@
       border: 1px solid #e4e4e4;
       padding: 15px;
       margin-bottom: 15px;
+      color: white;
     }
 
     .messages {
@@ -56,64 +57,78 @@
       padding-right: 10px;
       position: relative;
     }
-
-    .message-form {
-      display: flex;
-      flex-shrink: 0;
-    }
-
-    .message-form__input {
-      flex-grow: 1;
-      border: 1px solid #dfdfdf;
-      padding: 10px 15px;
-      font-size: 16px;
-    }
-
-    .message-form__button {
-      margin: 10px;
-    }
   </style>
+
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Saqsham's Blog</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-        aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">
-              <font color="black">Home</font>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../about.html">
-              <font color="black">About</font>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="room.html">
-              <font color="grey">Chat</font>
-            </a>
-          </li>
-        </ul>
+
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="../index.html">Saqsham's Blog</a>
+    <div class="collapse navbar-collapse">
+      <div class="navbar-nav">
+        <a class="navbar-brand nav-link" href="../index.html">Home</a>
+        <a class="navbar-brand nav-link" href="../about.html">About</a>
+        <a class="navbar-brand nav-link active" href="room.html"> ChatRoom <span class="sr-only">(current)</span></a>
+        <!-- <a class="navbar-brand nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
       </div>
     </div>
   </nav>
 
-  <div class="members-count">-</div>
-  <div class="members-list">-</div>
-  <div class="messages"></div>
-  <form class="message-form" onsubmit="return false;">
-    <input class="message-form__input" placeholder="Type a message.." type="text" />
-    <input class="message-form__button" value="Send" type="submit" />
-  </form>
+  <header class="masthead" style="background-image: url('../img/home-bg.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h2>The ChatRoom </h2>
+            <span class="subheading">Maybe Socialize ?.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div align="left">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 mx-auto">
+        <font color="white">
+          <h4 class="section-heading">What is this and why is this ?</h4>
+          <p>
+            "The ChatRoom" is for the people visiting my website, try to chat with 
+            other online people or leave a message for me here or maybe 
+            send a message or troll or perhaps ignore and go back to your own world.
+          </p>
+        </font>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="body1">
+    <div class="members-count">-</div>
+    <div class="members-list">-</div>
+    <div class="messages" id="divMe"></div>
+  </div>
+
+  <!-- <div class="input-group input-group-lg">
+      <input class="message-form__input form-control" placeholder="Type a message.." type="text" />
+        <div class="input-group-prepend">
+      <input class="message-form__button btn btn-dark form-control" value="Send" type="submit" />
+    </div> -->
+  <div align="right">
+    <form class="message-form" onsubmit="return false;">
+      <div class="input-group input-group-lg mb-3 center" style="width: 40%;">
+        <input class="message-form__input form-control" placeholder="Type a message.." type="text" />
+        <div class="input-group-append">
+          <button class="message-form__button btn btn-outline-success" type="submit" value="Send">Send</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <br><br>
 
   <hr>
   <!-- Footer -->
@@ -218,6 +233,6 @@
   <script src="../js/clean-blog.min.js"></script>
   <script src="../js/custom-blog.js"></script>
   <script src="./script.js"></script>
-</body>
 
+</body>
 </html>

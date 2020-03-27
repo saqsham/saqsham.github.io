@@ -1,10 +1,23 @@
-// PS! Replace this with your own channel ID
-// If you use this channel ID your app will stop working in the future
-const CLIENT_ID = '4cNswoNqM2wVFHPg';
+const CLIENT_ID = 'Fnjv6lXoEtJDRoML';
+
+function chooseName() {
+  var name = prompt('Enter your name here (cancel for random name) : ', getRandomName())
+  if (name === null) {
+    name = getRandomName();
+  }
+  if (name.length >= 25) {
+    alert('name length too big, please retry with a short name')
+    name = prompt('Enter your name here (cancel for random name) :', getRandomName())
+    if (name === null) {
+      name = getRandomName();
+    }
+  }
+  return name;
+}
 
 const drone = new ScaleDrone(CLIENT_ID, {
   data: { // Will be sent out as clientData via events
-    name: getRandomName(),
+    name: chooseName(),
     color: getRandomColor(),
   },
 });
@@ -35,7 +48,9 @@ drone.on('open', error => {
     updateMembersDOM();
   });
 
-  room.on('member_leave', ({id}) => {
+  room.on('member_leave', ({
+    id
+  }) => {
     const index = members.findIndex(member => member.id === id);
     members.splice(index, 1);
     updateMembersDOM();
@@ -85,8 +100,9 @@ const DOM = {
 DOM.form.addEventListener('submit', sendMessage);
 
 function sendMessage() {
-  const value = DOM.input.value;
-  if (value === '') {
+  const now = getTimeNow();
+  const value = now + "  :  " + DOM.input.value;
+  if (DOM.input.value === '') {
     return;
   }
   DOM.input.value = '';
@@ -94,10 +110,14 @@ function sendMessage() {
     room: 'observable-room',
     message: value,
   });
+
 }
 
 function createMemberElement(member) {
-  const { name, color } = member.clientData;
+  const {
+    name,
+    color
+  } = member.clientData;
   const el = document.createElement('div');
   el.appendChild(document.createTextNode(name));
   el.className = 'member';
@@ -106,7 +126,7 @@ function createMemberElement(member) {
 }
 
 function updateMembersDOM() {
-  DOM.membersCount.innerText = `${members.length} users in room:`;
+  DOM.membersCount.innerText = `${members.length} user(s) in the room:`;
   DOM.membersList.innerHTML = '';
   members.forEach(member =>
     DOM.membersList.appendChild(createMemberElement(member))
@@ -123,9 +143,19 @@ function createMessageElement(text, member) {
 
 function addMessageToListDOM(text, member) {
   const el = DOM.messages;
-  const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
+  var wasTop = el.scrollTop + el.clientHeight === el.scrollHeight;
   el.appendChild(createMessageElement(text, member));
-  if (wasTop) {
-    el.scrollTop = el.scrollHeight - el.clientHeight;
+  
+  if (!wasTop) {
+    el.scrollTop = el.scrollHeight;
   }
+}
+
+function getTimeNow() {
+  const today = new Date();
+  const h = today.getHours();
+  const m = today.getMinutes();
+  const s = today.getSeconds();
+  const now = "[" + h + ":" + m + ":" + s + "]";
+  return now;
 }
