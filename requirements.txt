@@ -2,3 +2,4 @@ django
 gunicorn
 Werkzeug==0.16.0
 django-heroku
+whitenoise
