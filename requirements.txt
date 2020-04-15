@@ -1,0 +1,5 @@
+django
+gunicorn
+Werkzeug==0.16.0
+whitenoise
+django-heroku

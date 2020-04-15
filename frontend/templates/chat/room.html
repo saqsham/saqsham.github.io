@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Saksham | ChatRoom</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../statics/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="../statics/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="../statics/css/clean-blog.css" rel="stylesheet">
+
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+
+
+  <style>
+    .body1 {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 13px;
+      display: flex;
+      flex-direction: column;
+      max-height: 100vh;
+    }
+
+    .members-count,
+    .members-list,
+    .messages {
+      border: 1px solid #e4e4e4;
+      padding: 15px;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    .messages {
+      flex-shrink: 1;
+      overflow: auto;
+    }
+
+    .message {
+      padding: 5px 0;
+    }
+
+    .message .member {
+      display: inline-block;
+    }
+
+    .member {
+      padding-right: 10px;
+      position: relative;
+    }
+  </style>
+
+</head>
+
+<body>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#">Saqsham's Blog</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler02"
+      aria-controls="navbarToggler02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarToggler02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ChatRoom<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <header class="masthead" style="background-image: url('../statics/img/home-bg.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h2>The ChatRoom </h2>
+            <span class="subheading">Maybe Socialize ?.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div align="left">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 mx-auto">
+          <font color="white">
+            <h4 class="section-heading">What is this and why is this ?</h4>
+            <p>
+              "The ChatRoom" is for the people visiting my website, try to chat with
+              other online people or leave a message for me here or maybe
+              send a message or troll or perhaps ignore and go back to your own world.
+            </p>
+          </font>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body1">
+    <div class="members-count">-</div>
+    <div class="members-list">-</div>
+    <div class="messages" id="divMe"></div>
+  </div>
+
+  <div align="right">
+    <form class="message-form" onsubmit="return false;">
+      <div class="input-group input-group-lg mb-3 center" style="width: 50%;">
+        <input class="message-form__input form-control" placeholder="Type here.." type="text" />
+        <div class="input-group-append">
+          <button class="message-form__button btn btn-outline-success" type="submit" value="Send">Send</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <br>
+  <hr>
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <span class="caption text-muted">Connect with me.</span>
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://github.com/saqsham">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://telegram.me/saqsham">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://twitter.com/saqshams">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-reddit fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/saksham-saini-10669a18b">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.goodreads.com/saqsham">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-goodreads fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.anilist.co/user/saqsham">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-list fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.reddit.com/user/saqsham">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.imdb.com/user/ur108132465/">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-imdb fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://steamcommunity.com/id/saqsham">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-steam fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/saqshamsaini">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Saqsham's Blog 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../statics/vendor/jquery/jquery.min.js"></script>
+  <script src="../statics/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="../statics/js/clean-blog.min.js"></script>
+  <script src="../statics/js/custom-blog.js"></script>
+  <script src="../statics/chat-script.js"></script>
+
+</body>
+
+</html>
