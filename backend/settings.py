@@ -130,7 +130,7 @@ STATIC_URL = 'frontend/statics/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'frontend/statics')
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
