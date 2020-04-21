@@ -1,2 +1,4 @@
 note.txt
 keybase.txt
+db.sqlite3
+staticfiles/*
